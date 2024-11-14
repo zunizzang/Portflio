@@ -1,0 +1,692 @@
+@charset "utf-8";
+body {
+    font-family: 'notokr-regular';
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: block;
+}
+#mainwrap {
+    width: 98%;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 30px;
+}
+/* #top-menu {
+    position: absolute;
+
+} */
+#top-menu li > a img {
+    width: 35px;
+}
+#top-menu > ul {
+    display: flex;
+    position: absolute;
+    right: 8%;
+}
+#top-menu > ul > li {
+    margin-left: 28px;
+}
+
+#top-menu > ul > div {
+    position: absolute;
+    right: 0;
+}
+#top-menu > ul > li:nth-child(4) {
+    margin-right: 130px;
+}
+#top-menu > ul > .lang {
+    font-size: 14px;
+}
+.login {
+    position: absolute;
+    top:100px;
+    right: 80px;
+}
+.login > .user-area {
+    display: flex;
+    gap: 40px;
+    font-size: 18px;
+}
+.login-button, .signup-button {
+    padding: 10px 15px; 
+    background-color: #007BFF; 
+    border: 2px solid #fff; 
+    border-radius: 10px; 
+    color: #fff; 
+    text-decoration: none; 
+    transition: transform 0.1s ease, background-color 0.1s ease; 
+    display: inline-block; 
+}
+.login-button:hover, .signup-button:hover {
+    background-color: #87C1FF;
+}
+.login-button:active, .signup-button:active {
+    transform: scale(0.95); 
+    background-color: #004288;
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    text-align: center;
+    background-color: #fff;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    width: 350px; /* 모달 너비 */
+    height:350px;
+}
+.modal-content > h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.modal-content > form {
+    width: 100%;
+    height: 300px;
+    border: 3px dotted #004288;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.form-group {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 20px;
+}
+
+.modal-content  label {
+    flex: 0 0 120px; /* 레이블의 너비 설정 (필요에 따라 조정) */
+    margin-right: 8px; /* 레이블과 입력 사이의 간격 */
+    font-weight: bold; /* 레이블을 굵게 */
+}
+.modal-content   input {
+    flex: 1; /* 입력 필드가 남은 공간을 차지 */
+    padding:10px; /* 패딩 추가 */
+    border: 1px solid #ccc; /* 테두리 스타일 */
+    border-radius: 4px; /* 모서리 둥글게 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함하여 크기 계산 */
+}
+#pw {
+    margin-right: -10px;
+}
+#password {
+   margin-right: 15px;
+}
+#loginBTN {
+    width: 130px;
+    padding: 10px 15px; 
+    background-color: #007BFF;  
+    border: 2px solid #004288;;
+    border-radius: 10px;
+    color: #fff;
+}
+#loginBTN:active {
+    transform: scale(0.95);
+    background-color: #004288; 
+}
+#pwd {
+    margin-right: -10px;
+}
+#newpassword {
+    margin-right: 20px;
+}
+#signupBTN {
+    width: 130px;
+    border-radius: 10px;
+    padding: 10px 15px; 
+    background-color: #007BFF; 
+    border: 2px solid #004288;;
+    color: #fff;
+}
+#signupBTN:active {
+    transform: scale(0.95); 
+    background-color: #004288;
+}
+
+.close {
+    color: #aaa;
+    float: right; /* 오른쪽 정렬 */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+h1 img:nth-child(1){
+    width: 180px;
+}
+h1 img:last-child {
+    width: 180px;
+}
+h1 {
+    position: relative;
+    top: 30px;
+    left: 80px;
+    display: flex;
+    flex-direction: column; 
+    align-items: start;
+    z-index: -999;
+}
+#top-navi {
+    width: 100%;
+    display: flex;
+    position: relative;
+    top:-25px;
+    text-align: center;
+    justify-content: center;
+    padding:30px;
+}
+#top-navi > ul {
+    display: flex;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    font-weight: bold;
+    list-style: none;
+}
+#top-navi > ul > li {
+    display: flex;
+    margin-left: 180px;
+    position:relative;
+    height:58px;
+}
+#top-navi > ul > li > ul {
+    visibility:hidden;
+    position:absolute;
+    color:#f1f1f1;
+    background-color:#808080a3;
+    top:140px;
+    left:calc(50% - 160px);
+    width:173px;
+    padding:0 55px;
+    border-radius:15px;
+    z-index: 10;
+}
+#top-navi > ul > li:hover > ul {
+    visibility:visible;
+    top:50px;
+    transition:0.5s;
+}
+#top-navi > ul > li > ul > li {
+    height:58px;
+    line-height:55px;
+    font-size:18px;
+}
+
+#top-navi  > ul > li > ul > li a:hover {
+    color: #87C1FF; 
+    font-weight:bold;
+}
+#top-navi > ul > li > ul > li a:active {
+    transform: scale(0.95); 
+    color: #004288; 
+}
+
+#wrap > .visual img {
+    width: 100%;
+    height: auto;
+}
+
+.visual {
+    overflow: hidden; 
+}
+
+.slide {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.slide li {
+    display: none; 
+}
+
+.slide li.active {
+    display: block; 
+}
+
+button.prev {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 13px;
+    z-index: 10;
+    border-radius: 10%;
+    border: 2px solid rgba(255, 255, 255, 0.307);
+    background-color: rgba(255, 255, 255, 0.307);
+     
+}
+
+/* 버튼 클릭 시 */
+button.prev:active {
+    transform: translateY(-50%) scale(0.95); /* 버튼 크기 약간 축소 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 그림자 감소 */
+}
+button.next {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 13px;
+    z-index: 10;
+    border-radius:10%;
+    border: 2px solid rgba(255, 255, 255, 0.307);
+    background-color: rgba(255, 255, 255, 0.307);
+}
+
+/* 버튼 클릭 시 */
+button.next:active {
+    transform: translateY(-50%) scale(0.95); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mainsection {
+    padding: 50px 10px 0 0;
+    width: 100%;
+    position: relative;
+}
+.mainsection > ul {
+    display: inline;
+}
+.mainsection > ul > li {
+    display: inline;
+    margin-left: 20px;
+    line-height: 1.5;
+}
+.mainsection > ul > li img {
+    width: 20px;
+}
+.mainsection > ul > li > strong {
+    font-size: 18px;
+    font-weight: bold;
+}
+.mainsection > ul > li > span {
+    margin-left: 20px;
+    font-weight: 500;
+}
+.mainsection > ul > .admission > strong {
+    margin-right: 16px;
+}
+
+.admission {
+     position: relative;/* 자식 요소의 절대 위치를 위해 상대 위치 설정 */
+     padding-bottom: 12px;/* 아래 여백을 추가하여 텍스트와 경계선 사이의 간격을 줍니다 */
+}
+
+.admission::after {
+    content: ''; 
+    position: absolute; 
+    left: 0; 
+    bottom: 0;
+    width: 1110px; 
+    height: 2px; 
+    background-color: #808080 
+}
+
+#info > .infolink {
+    width: 100%;
+    position: absolute;
+    top:80px;
+    right: 40px;
+    text-align: end;
+    justify-content: end;
+    
+}
+#info > .infolink > ul {
+    display: inline;
+    font-size: 18px;
+}
+#info > .infolink > ul > li {
+    display: inline;
+    margin-left: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #808080;
+}
+
+#info > .infolink > ul > li > a:hover {
+    color: #87C1FF; 
+    text-shadow: 2px 1px #000;
+    font-weight: bold;
+}
+#section_wrap {
+    width: 100%; 
+    margin: 0 auto; 
+    position: relative;
+}
+.exhibitions {
+    overflow: hidden;
+    margin: 0 auto;
+    
+}
+
+#section_wrap   h2 {
+    position: absolute;
+    top: 100px;
+    left: 40px;
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.exhibitions > #txtitem  a img{
+    width: 300px;
+}
+#txtitem {
+    display: flex;
+    position: absolute;
+    top:180px;
+    padding: 10px;
+    width: 100%;
+}
+#txtitem > li {
+    display: inline-flex;
+    line-height: 1.8;
+    margin: 10px; 
+    width: 100%; 
+    
+}
+#txtitem > li  h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+#txtitem > li  .timeart, .titanic, .science, .unique {
+    color: red;
+}
+#txtitem > li  p,b {
+    margin: 0; 
+    word-break: keep-all; 
+}
+#txtitem > li  p {
+    font-size: 12px;
+}
+#txtitem > li  b {
+    font-size: 10px;
+    color: #808080;
+}
+.items {
+    max-width: 300px; 
+    padding: 10px; 
+    box-sizing: border-box; 
+}
+
+.under {
+    position: relative;
+    top: 760px;
+    text-align: center; 
+    margin: 0 50px; 
+}
+
+.under span {
+    display: block; 
+    width: 98%; 
+    height: 2px; 
+    background-color: #808080; 
+}
+#maincontainer {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#maincontainer > .news {
+    position: absolute;
+    top:800px;
+    left: 60px;
+    
+}
+#maincontainer > .news > .clip {
+    display: inline;
+    position: relative;
+    left: -30px;
+    top:20px;
+}
+#maincontainer > .news > .clip > ul {
+    display: inline;
+}
+#maincontainer > .news > .clip > ul > li {
+    margin-right: 10px;
+    display: inline-block;
+}
+#maincontainer > .news > .clip > ul > li h2 {
+    font-size: 45px;
+    font-weight: bold;
+}
+#maincontainer > .news > .clip img {
+    width: 45px;
+}
+#maincontainer > .news > .caption {
+    text-decoration: none;
+    list-style: none;
+    border-bottom: 2px solid #808080;
+    padding-bottom:14px;
+    width:650px;
+    line-height: 1.3;
+
+}
+#maincontainer>  .caption > .captxt > ul {
+    display: inline-flex;
+}
+#maincontainer > .news > .caption > .captxt > ul > li {
+    display: inline-flex;
+    font-size: 20px;
+    margin-left: 40px;
+    padding-top: 20px;
+}
+#maincontainer > .news > .caption > .captxt > ul > li img {
+    width: 70px;
+    position: relative;
+    top:15px;
+    left: 80px;
+}
+#maincontainer > .news > .caption > .captxt > ul > li:hover {
+    font-weight: bold;
+}
+#maincontainer > .news > .caption > .intext > .innertxt {
+    margin: 50px 0;
+
+}
+#maincontainer  .intext {
+    position: relative;
+    top:40px;
+}
+#maincontainer  .intext > .innertxt {
+    font-size: 18px;
+    line-height: 2.5;
+    
+}
+#maincontainer  .intext > .innertxt span {
+    color: #808080;
+    position: absolute;
+    right: 0;
+}
+#maincontainer {
+    position: relative;
+}
+#maincontainer  .news2 > .imagenews {
+    position: absolute;
+    right: 80px;
+    top:950px;
+}
+#maincontainer  .news2 > .imagenews > a img {
+    width: 500px;
+}
+#subtrc {
+    position: relative;
+    display: flex; /* 플렉스 박스 모델 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    gap: 20px; /* 아이템 간의 간격 설정 */
+
+}
+#maincontainer  #subtrc > .subitem {
+    position: absolute;
+    margin: 0;
+    top:1550px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    display: flex; 
+    gap: 100px; 
+}
+#maincontainer  #subtrc > .subitem  h2 {
+    margin-bottom: 30px;
+
+}
+.insub1, .insub2, .insub3 {
+    text-align: start; /* 텍스트 중앙 정렬 */
+    font-size: 45px;
+    font-weight: bold;
+}
+aside {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    
+}
+aside > .page-top {
+    width: 53px;
+    height: 53px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    border: 0;
+    z-index: 10;
+    background: url(../images/icons/btn_top.png) no-repeat;
+    transition: 0.8s;
+}
+#blind {
+    position: fixed;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    color: transparent !important;
+}
+
+#subtrc > .subitem img {
+    width: 400px;
+}
+
+#footwrap {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+#footwrap > .footmenu {
+    position: absolute;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100px;
+    top: 2280px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+#footwrap > .footmenu > ul {
+    display:flex;
+    justify-content:center;
+    gap: 160px;
+}
+#footwrap > .footmenu > ul > li {
+    position:relative;
+    padding:15px 0;
+    font-weight: bold;
+}
+#footwrap > .footmenu > ul > li > ul {
+    position:absolute;
+    color:#000;
+    top:58px;
+    left:calc(50% - 58px);
+    width:160px;
+    padding:0 25px;
+    font-weight:400;
+    font-size: 13px;
+    
+}
+#footwrap > .footmenu > ul > li > ul > li {
+    height:48px;
+    line-height: 2.5;
+    text-align: start;
+}
+
+#footwrap > .footmenu > ul > li > ul > li a:hover {
+    font-weight: bold;
+    color: #87C1FF; 
+}
+#footwrap > .footmenu > ul > li > ul > li a:active {
+    color:#004288;
+    
+}
+
+#footbox {
+    position: relative;
+}
+#footbox > .txtbox {
+    margin-top: 60px;
+    position: absolute;
+    top:2650px;
+    width: 100%;
+}
+#footbox > .txtbox > .top-txt > ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 20px;
+}
+#footbox > .txtbox > .top-txt > ul > li {
+    display: inline-flex;
+}
+#footbox > .txtbox > .top-txt > ul > li:first-child {
+    font-weight: bold;
+    border-bottom: 4px solid #000;
+    padding-bottom: 5px;
+}
+#footbox > .txtbox > .last-txt {
+    position: absolute;
+    top:60px;
+    width: 100%;
+}
+#footbox > .txtbox > .last-txt > ul {
+    display: block;
+    line-height: 2.5;
+    align-items: center;
+    justify-items: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+#footbox > .txtbox > .last-txt > ul > li:last-child {
+    color: #808080;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
